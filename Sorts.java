@@ -12,16 +12,14 @@ public class Sorts{
   */
   public static void bubbleSort(int[] data){
     boolean isSorted = false;
-    int count = 0;
-    while (isSorted==false){
-      count = 0;
+    while (!isSorted){
+      isSorted = true;
       for (int i=0; i<data.length-1; i++){
 	if (data[i]>data[i+1]){
 	  swap(data[i], data[i+1]);
-	  count++;
+	  isSorted = false;
 	}
       }
-      if (count == 0) isSorted=true;
     }
   }
 
