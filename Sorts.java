@@ -40,10 +40,17 @@ public class Sorts{
 
   public static void insertionSort(int[] data){
     int temp;
-    //int c;
-    //for (int i=0; i<data.length; i++){
-      //temp = data[i];
-    //}
+    int c;
+    for (int i=0; i<data.length; i++){
+      temp = data[i];
+      c = i-1;
+      while (c>=0 && temp<data[c]){
+	data[c+1] = data[c];
+	c--;
+      }
+      data[c+1] = temp;
+      //System.out.println(Arrays.toString(data));
+    }
   }
 
 }
