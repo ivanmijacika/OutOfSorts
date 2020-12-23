@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 public class Driver{
   public static void main(String[]args){
     if(args.length < 2){
@@ -8,11 +9,15 @@ public class Driver{
     }else{
 
 
-      int[] randData = new int[Integer.parseInt(args[0])];
+      int n = Integer.parseInt(args[0]);
+      int[] randData = new int[n];
+      Random r = new Random();
 
       //overhead: 1 random array generation.
       if(args.length < 3 || args[2].equals("random")){
-	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        for (int i=0; i<n; i++){
+          randData[i] = r.nextInt();
+        }
       }else if(args[2].equals("equal")){
 	      System.out.println("YOU MUST EDIT THIS FILE BEFORE USING IT!!! REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
       }else if(args[2].equals("sorted")){
